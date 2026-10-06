@@ -1,33 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="left">
-                <ul>
-                <li>S</li>
-                <li>O</li>
-                <li>N</li>
-                <li>U</li>
-                </ul>
-            </div>
-            <div class="right">
-                <ul>
-                   <li><a href="index.php"> Home</a></li>
-                    <li class = "about-page"><a href="About.php">About</a></li>
-                    <li><a href="services.php">Services</a></li>
-                    <li><a href="/">Projects</a></li>
-                    <li><a href="/ ">Contact Me</a></li>
-                    <?php include"CV.php"?>
-                </ul>
-            </div>
+<?php
+if (realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) {
+    header('Location: index.php', true, 302);
+    exit;
+}
+?>
+<header class="site-header">
+    <div class="header-inner wrap">
+        <a class="brand" href="index.php" aria-label="Sonu Shah home"><span class="brand-mark">s<span>.</span></span><span>Sonu Shah<span class="brand-caption">Developer & curious mind</span></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="menu-bars" aria-hidden="true"></span><span class="sr-only">Open navigation</span></button>
+        <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+            <a href="index.php#work" data-section="work">Work</a>
+            <a href="index.php#about" data-section="about">About</a>
+            <a href="index.php#expertise" data-section="expertise">Expertise</a>
+            <a class="nav-contact" href="index.php#contact" data-section="contact">Let’s talk <?= icon('diagonal') ?></a>
         </nav>
-    </header>
-</body>
-</html>
+    </div>
+    <div class="reading-progress" aria-hidden="true"></div>
+</header>
